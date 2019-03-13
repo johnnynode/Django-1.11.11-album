@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : utf-8
 
- Date: 03/13/2019 10:07:56 AM
+ Date: 03/13/2019 10:12:35 AM
 */
 
 SET NAMES utf8mb4;
@@ -67,7 +67,7 @@ CREATE TABLE `stu` (
 --  Records of `stu`
 -- ----------------------------
 BEGIN;
-INSERT INTO `stu` VALUES ('1', 'zhangsan', '22', 'm', 'python03'), ('2', 'lisi', '25', 'w', 'python04'), ('3', 'wangwu', '22', 'm', 'python03'), ('4', 'zhaoliu', '19', 'w', 'python04'), ('5', 'qq01', '20', 'm', 'python03'), ('6', 'qqmn', '21', 'w', 'python04'), ('7', 'uu02', '20', 'm', 'python05'), ('8', 'uu01', '21', 'w', 'python04'), ('9', '张三', '20', 'm', 'python05');
+INSERT INTO `stu` VALUES ('1', 'zhangsan', '22', 'm', 'python03'), ('2', 'lisi', '25', 'w', 'python04'), ('3', 'wangwu', '22', 'm', 'python03'), ('4', 'zhaoliu', '19', 'w', 'python04'), ('5', 'qq01', '20', 'm', 'python03'), ('6', 'qqmn', '21', 'w', 'python04'), ('7', 'uu02', '20', 'm', 'python05'), ('8', 'uu01', '21', 'w', 'python04'), ('9', 'test', '50', 'm', 'python05');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
