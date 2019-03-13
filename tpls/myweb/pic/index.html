@@ -1,0 +1,35 @@
+
+{% extends 'myweb/pic/base.html' %}
+
+{% block mainbody %}
+    <h3>浏览相册图片信息</h3>
+    <table width="800" border="0" cellpadding="4" cellspacing="0">
+        <tr>
+            <th>id号</th>
+            <th>标题</th>
+            <th>图片</th>
+            <th>时间</th>
+            <th>操作</th>
+        </tr>
+        {% for pic in piclist %}
+            <tr>
+                <td>{{ pic.id }}</td>
+                <td><a href="/static/pics/{{pic.picname}}">{{ pic.name }}</a></td>
+                <td align="center"><img src="/static/pics/s_{{ pic.picname }}"/></td>
+                <td>{{ pic.addtime|date:"Y-m-d H:i:s"}}</td>
+                <td>
+                    <a href="{% url 'editpic' pic.id %}">编辑</a>
+                    <a href="javascript:doDel('{% url 'delpic' pic.id %}')">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <script type="text/javascript">
+        function doDel(url){
+            if(confirm("确定要删除吗？")){
+                window.location.href=url;
+            }
+        }
+    </script>
+{% endblock %}

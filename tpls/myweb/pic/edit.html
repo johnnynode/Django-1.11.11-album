@@ -1,0 +1,36 @@
+{% extends 'myweb/pic/base.html' %}
+
+{% block mainbody %}
+    <style>
+          
+          table tr td,table tr th{border:0px solid #ddd;line-height:40px;}
+   </style>
+   <h3>修改相册信息</h3>
+    <form action="{% url 'updatepic' %}" enctype="multipart/form-data" method="post">
+        <input type="hidden" name="id" value="{{ pic.id }}"/>
+        <input type="hidden" name="oldpicname" value="{{ pic.picname }}"/>
+        {% csrf_token %}
+        <table style="width:320px" border="0">
+           <tr>
+             <td>标题：</td>
+             <td><input type="text" name="name" value="{{ pic.name }}"/></td>
+           </tr>
+           <!-- <tr>
+             <td>年龄：</td>
+             <td><input type="text" name="age"  value="{{ pic.age }}"/></td>
+           </tr> -->
+           <tr>
+             <td>图片：</td>
+             <td><input type="file" name="mypic"/></td>
+           </tr>
+           <tr>
+             <td colspan="2" align="center">
+                <input type="submit" value="编辑"/>
+                <input type="reset" value="重置"/>
+             </td>
+           </tr>
+        </table>
+    </form>
+    <br/><br/>
+    <img src="/static/pics/{{ pic.picname }}" width="300"/>
+{% endblock %}
